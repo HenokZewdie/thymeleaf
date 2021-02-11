@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:position="http://www.w3.org/1999/xhtml" xmlns:z-index="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+    <tr th:each="loopin : ${yourlist}">
+        <td><span  th:text = "${loopin.first_name}" ></span></td>
+        <td><span  th:text = "${loopin.email}"></span></td>
+        <td><span  th:text = "${loopin.role}"></span></td>
+    </tr>
+</table>
+
+</body>
+</html>
